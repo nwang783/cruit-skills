@@ -4,7 +4,7 @@ Last updated: 2026-06-20.
 
 | Marketplace | Status | URL | Notes |
 |---|---|---|---|
-| ClawHub | Not submitted | | Submit `cruit-candidate.zip` or the public GitHub repo. |
+| ClawHub | Live | https://clawhub.ai/nwang783/cruit-candidate | Published as `cruit-candidate@1.0.0`; moderation verdict clean. |
 | Agensi | Not submitted | | Submit as API-backed, privacy-first developer profile skill. |
 | SkillDrop | Not submitted | | Submit manually under Cruit profile/account. |
 | AgenticSkills | Ready to submit | https://github.com/nwang783/cruit-skills | Public repo is available; submit the `cruit-candidate` directory URL. |
