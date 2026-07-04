@@ -6,9 +6,12 @@ Canonical skill source lives here. Do not duplicate skill files under `apps/web/
 Install with the skills CLI:
 
 ```sh
-npx --yes skills add nwang783/cruit --skill cruit-candidate --full-depth -g --copy -y
-npx --yes skills add nwang783/cruit --skill cruit-company --full-depth -g --copy -y
+npx skills@latest add nwang783/cruit-skills
+npx skills@latest add nwang783/cruit-skills@cruit-candidate
+npx skills@latest add nwang783/cruit-skills@cruit-company
 ```
+
+GitHub Actions syncs this folder to `nwang783/cruit-skills` on main-branch changes.
 
 Candidate scripts:
 
