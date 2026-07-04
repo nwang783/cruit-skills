@@ -221,6 +221,21 @@ Summarize each evidence packet against the request's rubric:
 
 Do not score with fake precision. Use `strong`, `promising`, `unclear`, or `weak`.
 
+After the user approves a review decision, update the packet status:
+
+```http
+PATCH {CRUIT_API_BASE}/v1/requests/<requestId>/evidence/<packetId>/status
+Authorization: Bearer <token>
+{
+  "status": "reviewed | advanced | declined",
+  "statusNote": "Optional short note for the candidate, no secrets or private contact details."
+}
+```
+
+Use `reviewed` when the packet has been read but no decision is ready, `advanced` when
+the candidate should move forward, and `declined` when the company is passing. The
+candidate may receive the status in a daily email digest.
+
 ---
 
 ## Mode 2 — Search candidates

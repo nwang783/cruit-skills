@@ -770,4 +770,6 @@ Authorization: Bearer <token>
 ```
 
 After success, tell the user the `packetId` and summarize what was submitted. Do not
-claim the company has reviewed it yet.
+claim the company has reviewed it yet. If the company changes the packet status, Cruit
+may send the user one daily status digest email; the email includes only the company,
+role, status change, and any short company note.
