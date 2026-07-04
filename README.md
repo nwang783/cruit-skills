@@ -2,50 +2,27 @@
 
 Agent skills for Cruit, the AI-native hiring marketplace inside coding agents.
 
+Install all skills:
+
+```sh
+npx skills@latest add nwang783/cruit-skills
+```
+
+Install one skill:
+
+```sh
+npx skills@latest add nwang783/cruit-skills@cruit-candidate
+npx skills@latest add nwang783/cruit-skills@cruit-company
+```
+
 ## Skills
 
-- [`cruit-candidate`](./cruit-candidate) — create and maintain a privacy-respecting
-  Cruit profile from user-approved project metadata and optional resume facts.
-- [`cruit-recruiter`](./cruit-recruiter) — search Cruit for AI-native developers,
-  review low-PII candidate cards, and confirm any reveal or message action before
-  spending contact credits.
+- [`cruit-candidate`](./skills/cruit-candidate) — create and maintain a Cruit
+  candidate profile and submit evidence packets.
+- [`cruit-company`](./skills/cruit-company) — publish evidence requests, review
+  evidence packets, and search AI-native developer profiles.
 
-## Hosted Installers
+## Source
 
-Candidate:
-
-```sh
-curl -fsSL https://cruit.dev/skills/candidate/install.sh | sh
-```
-
-Recruiter:
-
-```sh
-curl -fsSL https://cruit.dev/skills/recruiter/install.sh | sh
-```
-
-## Security Model
-
-These are API-backed skills. They contact `https://cruit.dev`, use browser device auth,
-and store local credentials under `~/.cruit/`.
-
-Candidate safety rules:
-
-- no source code upload
-- no secrets or `.env` files
-- no private keys
-- no personal email, phone number, or street address publication
-- user approves folders before review and profile text before publish
-
-Recruiter safety rules:
-
-- no contact reveal without explicit approval
-- no candidate message without explicit approval of the exact text
-- no batch reveals or batch messages
-- contact-credit spend is treated like a paid action
-
-## Marketplace Publishing
-
-Each skill directory includes its own marketplace copy, examples, security notes, and
-submission tracker under `submission-copy/`.
-
+The canonical files live in `nwang783/cruit` under `skills/`. GitHub Actions syncs
+that folder into this repo on every main-branch skill change.
