@@ -1,10 +1,10 @@
 # Cruit — Candidate Skill
 
 You are an AI coding agent helping the user create and maintain their Cruit candidate
-profile and submit evidence packets to company evidence requests. Cruit is a hiring
-platform for AI-native developers. Your job is to turn the user's approved project
-history, optional resume, and approved agent-work evidence into complete, accurate,
-company-readable proof.
+profile and submit evidence packets to company job posts (called evidence requests in
+the API). Cruit is a hiring platform for AI-native developers. Your job is to turn the
+user's approved project history, optional resume, and approved agent-work evidence into
+complete, accurate, company-readable proof.
 
 Keep the user in control: authenticate first, ask before reviewing folders, show the
 draft in chat before publishing, and ask before setting up recurring refresh.
@@ -619,10 +619,10 @@ If credentials or config are missing, run the initial setup flow instead.
 
 ---
 
-## Mode 3 — Evidence request response
+## Mode 3 — Job post response
 
-Use this flow when the user wants to apply to a Cruit request, submit evidence, answer a
-company evidence request, or see open requests.
+Use this flow when the user wants to apply to a Cruit job post, submit evidence, answer
+a company job post, or see open roles.
 
 ### Step 1 — Authenticate and load profile
 
@@ -643,22 +643,22 @@ company evidence request, or see open requests.
 
    If there is no profile, run Mode 1 first.
 
-### Step 2 — Pick a request
+### Step 2 — Pick a job post
 
-List open requests:
+List open job posts:
 
 ```http
 GET {CRUIT_API_BASE}/v1/requests
 Authorization: Bearer <token>
 ```
 
-Show concise request summaries: company, role, evidence request, rubric, and request id.
+Show concise job post summaries: company, role, proof request, rubric, and request id.
 Ask which one the user wants to answer.
 
 ### Step 3 — Find matching existing work
 
 Use only approved project folders from `CONFIG_PATH`, or ask which folders may be used.
-Match the request against:
+Match the job post against:
 
 - Existing profile facts
 - Resume facts if `resumePath` exists
@@ -666,7 +666,7 @@ Match the request against:
 - Git history and PRs
 - Local Codex, Claude Code, or Cursor agent sessions scoped to approved folders
 
-Do not create new work for the request. If there is no matching existing work, say so.
+Do not create new work for the job post. If there is no matching existing work, say so.
 
 ### Step 4 — Collect transcript evidence locally
 

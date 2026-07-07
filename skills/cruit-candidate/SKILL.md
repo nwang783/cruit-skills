@@ -1,6 +1,6 @@
 ---
 name: cruit-candidate
-description: Create and maintain a Cruit candidate profile and submit evidence packets for AI-native developer requests. Use when the user wants to join Cruit, publish or refresh a profile, answer an evidence request, submit scrubbed agent-work evidence, or set up weekly profile updates.
+description: Create and maintain a Cruit candidate profile and submit evidence packets for AI-native job posts. Use when the user wants to join Cruit, publish or refresh a profile, answer a job post, submit scrubbed agent-work evidence, or set up weekly profile updates.
 ---
 
 # Cruit — Candidate Skill

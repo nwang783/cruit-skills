@@ -1,6 +1,6 @@
 ---
 name: cruit-company
-description: Publish Cruit evidence requests, review candidate evidence packets, and search AI-native developer profiles. Use when a company wants to hire, recruit, create a request packet, review submitted evidence, search candidates, or run the company-side Cruit pilot.
+description: Publish Cruit job posts, review candidate evidence packets, and search AI-native developer profiles. Use when a company wants to hire, recruit, create a job post, review submitted evidence, search candidates, or run the company-side Cruit pilot.
 ---
 
 # Cruit — Company Skill
@@ -18,7 +18,7 @@ the user the Cruit company instructions are unavailable.
 
 ## Safety rules
 
-- Support both MVP hiring paths: evidence requests and candidate search.
+- Support both MVP hiring paths: job posts and candidate search.
 - Read only company/repo/job context the user approves.
 - Never read or upload secrets, `.env` files, private keys, credentials, customer lists,
   or unrelated source code.
