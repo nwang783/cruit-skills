@@ -134,6 +134,22 @@ Who are you trying to hire, and what proof would make you take someone seriously
 Use the user's answer plus company context to draft the job post. Do not invent hard
 requirements unsupported by the context.
 
+### Importing an existing Work at a Startup posting
+
+If the company already has a posting on Work at a Startup, you can import it instead of
+collecting context from scratch. Fetch the posting URL (`workatastartup.com/jobs/<id>`)
+with an HTML accept header — for example `curl -s <url> -H 'Accept: text/html'` — because
+the site returns 406 without one. The response embeds the whole page payload as
+HTML-escaped JSON in a `data-page="..."` attribute: unescape the entities (`&quot;`,
+`&amp;`, ...), parse the JSON, and read `props.job` (title, location, salaryRange,
+skills, descriptionHtml, interviewProcessHtml) and `props.company` (name, description,
+hiringDescriptionHtml, techDescriptionHtml, founders). Strip the tags from the `*Html`
+fields and map what you find into the Step 4 draft. Work at a Startup has no equivalent
+of the proof request, evaluation rubric, or application instructions, so draft those
+yourself from the role description and confirm them with the user. A company page URL
+(`workatastartup.com/companies/<slug>`) works the same way and lists the company's open
+job ids under `props.company.jobs`.
+
 ### Step 4 — Draft job post
 
 Draft in Markdown first. Include:
